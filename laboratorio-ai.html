@@ -6,10 +6,10 @@
 <title>X MARKET LAB | Laboratorio AI</title>
 <meta name="description" content="Laboratorio AI de X Market Lab. Próximamente."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;900&family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Public+Sans:wght@700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;800;900&family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
-  tailwind.config = {darkMode:'class',theme:{extend:{colors:{tertiary:'#8ADC16',surface:'#131313',onSurface:'#E5E2E1',muted:'#A7ADB7'},fontFamily:{headline:['Public Sans'],body:['Inter'],display:['Libre Franklin'],accent:['Montserrat']}}}}
+  tailwind.config = {darkMode:'class',theme:{extend:{colors:{tertiary:'#A4DB2C',surface:'#070D15',onSurface:'#E5E2E1',muted:'#A7ADB7'},fontFamily:{headline:['Public Sans'],body:['Inter'],display:['Libre Franklin'],accent:['Montserrat']}}}}
 </script>
 <style>
   :root{
@@ -68,9 +68,9 @@
   .orbit-ring.r3{width:min(31vw,260px); height:min(31vw,260px); border-color:rgba(129,157,255,.11);}
   .node{position:absolute; left:50%; top:31%; width:10px; height:10px; border-radius:999px; transform:translate(-50%,-50%);}
   .node::before{content:''; position:absolute; inset:0; border-radius:inherit; background:currentColor; box-shadow:0 0 14px currentColor,0 0 34px rgba(255,255,255,.12);}
-  .node.one{color:#8ADC16; animation:floatNodeOne 9.5s linear infinite;}
+  .node.one{color:#A4DB2C; animation:floatNodeOne 9.5s linear infinite;}
   .node.two{color:#98b7ff; animation:floatNodeTwo 12s linear infinite;}
-  .node.three{color:#8ADC16; width:8px; height:8px; animation:floatNodeThree 14.5s linear infinite;}
+  .node.three{color:#A4DB2C; width:8px; height:8px; animation:floatNodeThree 14.5s linear infinite;}
 
   .hero-shell{
     position:relative;
@@ -112,7 +112,7 @@
     max-width:100%;
     margin:0;
     padding:0 .08em;
-    background:linear-gradient(90deg,#f7f9ff 0%,#dff2c7 28%,#8ADC16 55%,#9fc0ff 84%,#f7f9ff 100%);
+    background:linear-gradient(90deg,#f7f9ff 0%,#dff2c7 28%,#A4DB2C 55%,#9fc0ff 84%,#f7f9ff 100%);
     background-size:220% 100%;
     -webkit-background-clip:text;
     background-clip:text;
@@ -185,26 +185,33 @@
     .hero-animation{height:clamp(190px, 56vw, 250px);}
     .coming-title{letter-spacing:-.06em;}
   }
+
+        body { letter-spacing: -0.01em; }
+        h1, h2, h3, h4, .font-\['Libre_Franklin\'\] { text-wrap: balance; }
+        .bg-tertiary, .hover\:bg-tertiary:hover { box-shadow: 0 10px 30px rgba(164, 219, 44, 0.18); }
+        nav { box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+        .glass-panel, .tactical-glass { border: 1px solid rgba(255,255,255,0.06); }
+    
 </style>
 </head>
 <body class="bg-surface text-onSurface font-body overflow-x-hidden">
-<nav class="fixed top-0 z-50 w-full bg-[#001f3f]/95 backdrop-blur border-b border-white/10">
+<nav class="fixed top-0 z-50 w-full bg-[#071C36]/95 backdrop-blur border-b border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 flex items-center justify-between gap-4">
     <a class="font-['Libre_Franklin'] font-black text-lg sm:text-xl tracking-tighter text-white uppercase shrink-0" href="index.html">X MARKET LAB</a>
     <div class="hidden md:flex gap-6 lg:gap-8 items-center">
-      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="index.html#soluciones">Soluciones</a>
-      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="profesionales.html">Profesionales</a>
-      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="empresas.html">Empresas</a>
-      <a class="text-[#8ADC16] font-['Montserrat'] font-medium text-sm" href="laboratorio-ai.html">Laboratorio AI</a>
+      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#A4DB2C] transition-colors duration-300" href="index.html#soluciones">Soluciones</a>
+      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#A4DB2C] transition-colors duration-300" href="profesionales.html">Profesionales</a>
+      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#A4DB2C] transition-colors duration-300" href="empresas.html">Empresas</a>
+      <a class="text-[#A4DB2C] font-['Montserrat'] font-medium text-sm" href="laboratorio-ai.html">Laboratorio AI</a>
     </div>
     <a class="hidden md:inline-flex bg-tertiary text-black font-['Libre_Franklin'] font-bold tracking-tight uppercase text-xs lg:text-sm px-4 lg:px-6 py-2.5 active:scale-95 duration-150 transition-all text-center" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">Solicitar Diagnóstico</a>
     <details class="md:hidden relative">
       <summary class="list-none cursor-pointer inline-flex items-center justify-center w-10 h-10 border border-white/15 text-white"><span class="material-symbols-outlined">menu</span></summary>
-      <div class="absolute right-0 mt-3 w-72 bg-[#111317] border border-white/10 shadow-2xl p-4 flex flex-col gap-3">
+      <div class="absolute right-0 mt-3 w-72 bg-[#0B111A] border border-white/10 shadow-2xl p-4 flex flex-col gap-3">
         <a class="text-slate-200 font-['Montserrat'] text-sm" href="index.html#soluciones">Soluciones</a>
         <a class="text-slate-200 font-['Montserrat'] text-sm" href="profesionales.html">Profesionales</a>
         <a class="text-slate-200 font-['Montserrat'] text-sm" href="empresas.html">Empresas</a>
-        <a class="text-[#8ADC16] font-['Montserrat'] text-sm" href="laboratorio-ai.html">Laboratorio AI</a>
+        <a class="text-[#A4DB2C] font-['Montserrat'] text-sm" href="laboratorio-ai.html">Laboratorio AI</a>
         <a class="mt-2 inline-flex justify-center bg-tertiary text-black font-['Libre_Franklin'] font-bold tracking-tight uppercase text-xs px-4 py-3" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">Solicitar Diagnóstico</a>
       </div>
     </details>
