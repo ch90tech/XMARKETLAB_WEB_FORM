@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>X MARKET LAB | Claridad Estratégica en la Era de la IA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;900&amp;family=Montserrat:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#474747",
+              "tertiary": "#8adc16",
+              "primary-fixed-dim": "#afc8f0",
+              "outline-variant": "#43474e",
+              "inverse-on-surface": "#313030",
+              "surface-container-high": "#2a2a2a",
+              "on-primary": "#163152",
+              "on-error": "#690005",
+              "on-secondary-container": "#b6b5b4",
+              "inverse-primary": "#476083",
+              "on-tertiary": "#1e3700",
+              "on-background": "#e5e2e1",
+              "tertiary-fixed": "#a5f93b",
+              "tertiary-container": "#122300",
+              "surface-container-low": "#1c1b1b",
+              "surface-variant": "#353534",
+              "primary-fixed": "#d4e3ff",
+              "primary-container": "#001f3f",
+              "on-secondary-fixed": "#1b1c1c",
+              "on-surface-variant": "#c4c6cf",
+              "outline": "#8e9198",
+              "surface-dim": "#131313",
+              "on-secondary-fixed-variant": "#474747",
+              "background": "#131313",
+              "on-tertiary-fixed": "#0f2000",
+              "primary": "#afc8f0",
+              "secondary-fixed": "#e4e2e1",
+              "surface-tint": "#afc8f0",
+              "surface-container-highest": "#353534",
+              "on-primary-fixed-variant": "#2f486a",
+              "inverse-surface": "#e5e2e1",
+              "secondary": "#c8c6c6",
+              "on-surface": "#e5e2e1",
+              "on-primary-fixed": "#001c3a",
+              "on-primary-container": "#6f88ad",
+              "on-tertiary-container": "#5b9600",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "on-tertiary-fixed-variant": "#2e4f00",
+              "on-secondary": "#303030",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#c8c6c6",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-fixed-dim": "#8adc16",
+              "on-error-container": "#ffdad6",
+              "surface-bright": "#3a3939",
+              "surface-container": "#201f1f"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(58, 57, 57, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .directional-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #43474E 50%, transparent);
+            opacity: 0.15;
+        }
+        .diagonal-accent {
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+    summary::-webkit-details-marker{display:none;} details[open] summary{opacity:.9;} </style>
+<style id="xmarketlab-mobile-fixes">
+@media (max-width: 767px){
+  #hero{min-height:auto;padding-top:1.5rem;padding-bottom:4rem;}
+  #hero h1{font-size:clamp(2.8rem,14vw,4.5rem);line-height:.92;}
+  #hero p{font-size:1rem;line-height:1.6;}
+  #hero .grid{gap:1rem;}
+  #hero .min-h-\[220px\]{min-height:190px;}
+  #reciente h2{font-size:clamp(2rem,10vw,3rem);line-height:1.02;}
+  #reciente p{font-size:1rem;line-height:1.65;}
+  #reciente a{display:inline-flex;align-items:center;justify-content:center;width:min(100%,22rem);padding:1rem 1.25rem;font-size:1rem;line-height:1.15;text-align:center;white-space:normal;word-break:normal;}
+}
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary selection:text-on-tertiary overflow-x-hidden antialiased">
+<!-- TopAppBar -->
+<nav class="fixed top-0 z-50 w-full bg-[#001f3f]/95 backdrop-blur border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 flex items-center justify-between gap-4">
+    <a class="font-['Libre_Franklin'] font-black text-lg sm:text-xl tracking-tighter text-white uppercase shrink-0" href="/">X MARKET LAB</a>
+    <div class="hidden md:flex gap-6 lg:gap-8 items-center">
+      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="/#soluciones">Soluciones</a>
+      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="/profesionales/">Profesionales</a>
+      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="/empresas/">Empresas</a>
+      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="/laboratorio-ai/">Laboratorio AI</a>
+    </div>
+    <a class="hidden md:inline-flex bg-tertiary text-on-tertiary font-['Libre_Franklin'] font-bold tracking-tight uppercase text-xs lg:text-sm px-4 lg:px-6 py-2.5 active:scale-95 duration-150 transition-all text-center" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">Solicitar Diagnóstico</a>
+    <details class="md:hidden relative">
+      <summary class="list-none cursor-pointer inline-flex items-center justify-center w-12 h-12 border border-white/15 text-white bg-white/5"><span class="material-symbols-outlined">menu</span></summary>
+      <div class="absolute right-0 mt-3 w-[min(18rem,calc(100vw-2rem))] bg-[#111317] border border-white/10 shadow-2xl p-4 flex flex-col gap-3">
+        <a class="text-slate-200 font-['Montserrat'] text-sm" href="/#soluciones">Soluciones</a>
+        <a class="text-slate-200 font-['Montserrat'] text-sm" href="/profesionales/">Profesionales</a>
+        <a class="text-slate-200 font-['Montserrat'] text-sm" href="/empresas/">Empresas</a>
+        <a class="text-slate-200 font-['Montserrat'] text-sm" href="/laboratorio-ai/">Laboratorio AI</a>
+        <a class="mt-2 inline-flex justify-center bg-tertiary text-on-tertiary font-['Libre_Franklin'] font-bold tracking-tight uppercase text-xs px-4 py-3" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">Solicitar Diagnóstico</a>
+      </div>
+    </details>
+  </div>
+</nav>
+<main class="pt-24 md:pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[760px] md:min-h-[921px] flex items-center justify-center overflow-hidden" id="hero">
+<!-- Architectural Background -->
+<div class="absolute inset-0 z-0">
+<img alt="Architectural Backdrop" class="w-full h-full object-cover opacity-30 grayscale brightness-50" data-alt="Monolithic dark brutalist architectural structure with sharp angles and clean geometric lines under a moody twilight sky with subtle blue lighting" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWdBOZeLFwqle0yETLeK4BD3-m4qJNFh4JLE_Ig0ssNnaP-YvhwEcdhdJJbem12PH1hGDYf38KSpZ8ast5UjlYYIQlqke3ynwxZ_c5q71LMojlT7zQLT8DY34hPVS0C_oxqTtiHqbytN0aYx31NN5Jfq1xRFospd51FDE9e9neVtvAW6vKqByJSzo4xpfPrXnnKwB1Rj9CGHJ7VviLekbf4qb_Ip7bO7pCrS2gg2GJfQpJf2cV6av_Zl66IXfmQpThEIU7PJ6uCqj9" style=""/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface via-transparent to-surface"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full text-center">
+<div class="inline-flex items-center gap-2 mb-6 px-4 py-1 bg-surface-container-high border-l-2 border-tertiary">
+<span class="material-symbols-outlined text-tertiary text-sm" style='font-variation-settings: "FILL" 1;'>radar</span>
+<span class="font-['Montserrat'] text-xs tracking-widest uppercase text-tertiary font-bold" style="">LABORATORIO ESTRATÉGICO CON AI</span>
+</div>
+<h1 class="font-['Libre_Franklin'] font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white uppercase tracking-tighter mb-6 leading-none" style="">
+                    Claridad estratégica<br/><span class="text-tertiary" style="">en la era de la IA</span>
+</h1>
+<p class="max-w-2xl mx-auto font-['Montserrat'] text-base sm:text-lg md:text-xl text-on-surface-variant mb-8 md:mb-12" style="">
+                    Aprende o implementa inteligencia artificial con más claridad, estructura y valor real</p>
+<!-- DECISION BLOCK -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto mb-8 md:mb-12">
+<!-- Option 1: Persona -->
+<a aria-label="Ir a Profesionales" class="group relative bg-primary-container border-l-4 border-transparent hover:border-tertiary transition-all duration-300 p-5 sm:p-6 md:p-8 text-left flex flex-col justify-between min-h-[220px] md:min-h-[240px]" href="/profesionales/">
+<div class="">
+<h3 class="font-['Libre_Franklin'] font-black text-2xl sm:text-3xl text-white uppercase mb-4" style="">SOY PERSONA</h3>
+<p class="text-on-primary-container font-medium text-lg leading-snug" style="">Quiero aprender IA de forma estructural y aplicarla mejor en mi trabajo.</p>
+</div>
+<div class="flex items-center gap-2 text-tertiary font-bold uppercase text-sm mt-6 group-hover:translate-x-2 transition-transform" style="">
+                            Acceder a formación <span class="material-symbols-outlined" style="">arrow_forward</span>
+</div>
+</a>
+<!-- Option 2: Empresa -->
+<a aria-label="Ir a Empresas" class="group relative bg-surface-container-high border-l-4 border-transparent hover:border-tertiary transition-all duration-300 p-5 sm:p-6 md:p-8 text-left flex flex-col justify-between min-h-[220px] md:min-h-[240px]" href="/empresas/">
+<div class="">
+<h3 class="font-['Libre_Franklin'] font-black text-2xl sm:text-3xl text-white uppercase mb-4" style="">SOY EMPRESA</h3>
+<p class="text-on-surface-variant font-medium text-lg leading-snug" style="">Quiero implementar IA con más claridad y sacarle más provecho a mi negocio.</p>
+</div>
+<div class="flex items-center gap-2 text-tertiary font-bold uppercase text-sm mt-6 group-hover:translate-x-2 transition-transform" style="">
+                            Ver soluciones corporativas <span class="material-symbols-outlined" style="">arrow_forward</span>
+</div>
+</a>
+</div>
+<a class="inline-flex items-center gap-3 text-slate-400 hover:text-white transition-colors uppercase font-bold tracking-widest text-xs" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer" style="">
+                    O SOLICITAR UN DIAGNÓSTICO PERSONALIZADO <span class="material-symbols-outlined text-sm" style="">north_east</span>
+</a>
+</div>
+<!-- Geometric Motifs -->
+<div class="absolute bottom-10 left-10 opacity-20 hidden lg:block">
+<div class="w-32 h-32 border border-outline-variant rotate-45"></div>
+</div>
+<div class="absolute top-1/2 -right-16 opacity-10 hidden lg:block">
+<div class="w-64 h-64 rounded-full border-4 border-tertiary"></div>
+</div>
+</section>
+<!-- Positioning & Problem (Asymmetric Layout) -->
+<section class="py-16 md:py-24 bg-surface" id="posicionamiento">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:p-5 sm:p-6 md:p-8 md:p-10 md:gap-16 items-start">
+<!-- Left: Positioning -->
+<div class="lg:col-span-5 border-l-2 border-tertiary pl-8">
+<span class="font-['Montserrat'] text-xs tracking-[0.3em] uppercase text-tertiary mb-4 block" style="">Posicionamiento</span>
+<h2 class="font-['Libre_Franklin'] font-black text-3xl md:text-4xl text-white uppercase mb-6 leading-tight" style="">IA con claridad, estructura y criterio.</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed" style="">
+                            X Market Lab ayuda a personas y empresas a aprender, entender e implementar inteligencia artificial de forma más útil, estratégica y estructurada.
+                        </p>
+</div>
+<!-- Right: Problem (Shifted Down) -->
+<div class="lg:col-span-7 lg:mt-32">
+<div class="relative p-6 sm:p-5 sm:p-6 md:p-8 md:p-12 overflow-hidden bg-surface-container-low group">
+<!-- Background Image Layer -->
+<div class="absolute inset-0 z-0">
+<img alt="Person overwhelmed by a complex AI data cloud, representing lack of clarity." class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105 opacity-40" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMl6wVsgi4d-GlJR2EZ7YkULDjDnECW0JqpwkVQYjTTPgBYcSPh8nO9C-_17mgdNJpcPOld8XNP_RJLroW8AXv6jJ5EKg4pzaa8WLoK0R6jPuz_BZjvb9Xb5sIJmzfWoDEYXD47TajxYg9sVARs3Sencaka4hIw5P8-u5vrBX-CSDAQT08MXyciPNESAJXIZ4AbXBYaSWInwvaLo9XGFtKvLJpnRtrmcJXDurAiHAL6jGOoydGyPNlp3XwlSgxeArsSZouJAtjdJZo" style=""/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-low to-transparent via-surface-container-low/40"></div>
+</div>
+<!-- Content Layer -->
+<div class="relative z-10">
+<span class="material-symbols-outlined text-tertiary text-3xl md:text-4xl mb-6 block" style="">warning</span>
+<h2 class="font-['Libre_Franklin'] font-black text-3xl md:text-4xl text-white uppercase mb-6 leading-tight" style="">
+            El problema no es solo la tecnología. Es la falta de claridad.
+        </h2>
+<p class="text-xl text-on-surface-variant leading-relaxed" style="">
+            Muchas personas y negocios ya tienen acceso a herramientas de inteligencia artificial. Lo difícil no es encontrarlas. Lo difícil es entenderlas bien, aplicarlas con criterio e integrarlas de forma útil al trabajo real.
+        </p>
+</div>
+<!-- Subtle Accent -->
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary/10 blur-3xl rounded-full -mr-12 -mt-12"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- What We Do (Bento Grid Style) -->
+<section class="py-16 md:py-24 bg-surface-container-lowest relative overflow-hidden" id="soluciones">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+<div class="text-center mb-10 md:mb-16">
+<h2 class="font-['Libre_Franklin'] font-black text-3xl md:text-4xl md:text-5xl text-white uppercase tracking-tighter mb-4" style="">Ejes de Intervención</h2>
+<div class="w-24 h-1 bg-tertiary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-outline-variant/15 border border-outline-variant/15">
+<!-- Pillar 1 -->
+<div class="bg-surface p-6 sm:p-5 sm:p-6 md:p-8 md:p-10 hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-tertiary text-3xl md:text-4xl mb-8 group-hover:scale-110 transition-transform" style="">school</span>
+<h3 class="font-['Montserrat'] font-bold text-lg text-white uppercase mb-4 leading-tight" style="">Claridad para aprender IA</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed" style="">Metodologías diseñadas para la comprensión profunda, no solo para la repetición de prompts.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface p-6 sm:p-5 sm:p-6 md:p-8 md:p-10 hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-tertiary text-3xl md:text-4xl mb-8 group-hover:scale-110 transition-transform" style="">architecture</span>
+<h3 class="font-['Montserrat'] font-bold text-lg text-white uppercase mb-4 leading-tight" style="">Implementación estructural de IA</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed" style="">Sistemas integrados que conectan la tecnología con el núcleo de tu operación.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface p-6 sm:p-5 sm:p-6 md:p-8 md:p-10 hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-tertiary text-3xl md:text-4xl mb-8 group-hover:scale-110 transition-transform" style="">analytics</span>
+<h3 class="font-['Montserrat'] font-bold text-lg text-white uppercase mb-4 leading-tight" style="">Mejora de trabajo, procesos y decisiones</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed" style="">Optimización de flujos críticos mediante el uso inteligente de datos y modelos.</p>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface p-6 sm:p-5 sm:p-6 md:p-8 md:p-10 hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-tertiary text-3xl md:text-4xl mb-8 group-hover:scale-110 transition-transform" style="">query_stats</span>
+<h3 class="font-['Montserrat'] font-bold text-lg text-white uppercase mb-4 leading-tight" style="">Integración estratégica presente y futuro</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed" style="">Visión de largo plazo para asegurar que la IA evolucione junto con tu ventaja competitiva.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Philosophy -->
+<section class="py-32 relative overflow-hidden" id="nosotros">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+<div class="flex flex-col lg:flex-row gap-6 sm:p-5 sm:p-6 md:p-8 md:p-10 md:gap-16 items-center">
+<div class="lg:w-1/2">
+<img alt="Latino professional working with a laptop in a premium, dark urban setting at night" class="w-full grayscale brightness-75 border border-outline-variant/30" data-alt="A sophisticated image of a Latino professional working with a laptop, featuring a background of a Latin American city at dusk with urban lights. The palette is dark blue and graphite, grayscale/desaturated, with a strategic and premium feel." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvE6MKR3qtyA1-Khpp9j0uDmPVsqcaOkr_w2MZghU9lEUgmpAT0zEFU8qXHjzeq1X1u4ZjCkZiPhKEblJMKOBVh-I-5_epbFivv7UT6aLaz80iE82F5tl-0g0VYB8x6xKzl0kWhx_1_V38ZiwFhc03Jrn1tGR81JJWEBwCJqgyqs4Tn7yqG6Xjlnge-lPv4fTHcDasZJqhABC9Ih4iSfGVfCEtO_zXj4U1M0d6LXrsugrzAJnR6ZBlsCiqhNaBSqkZPSgBlVwxnjBh" style=""/>
+</div>
+<div class="lg:w-1/2">
+<span class="font-['Montserrat'] text-xs tracking-widest uppercase text-tertiary mb-6 block font-bold" style="">Filosofía de Trabajo</span>
+<h2 class="font-['Libre_Franklin'] font-black text-3xl md:text-4xl md:text-5xl text-white uppercase mb-8 leading-tight" style="">Una forma más seria de trabajar con IA</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-8" style="">
+                            No se trata solo de usar herramientas. Se trata de entender qué hacer con ellas, cómo aplicarlas mejor y cómo convertir la IA en una ventaja útil y sostenible.
+                        </p>
+<div class="grid grid-cols-2 gap-5 sm:p-6 md:p-8 border-t border-outline-variant/15 pt-8">
+<div>
+<span class="block text-white font-black text-2xl sm:text-3xl mb-1" style="">0%</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 font-bold" style="">Hype / Relleno</span>
+</div>
+<div>
+<span class="block text-tertiary font-black text-2xl sm:text-3xl mb-1" style="">100%</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 font-bold" style="">Estructura / Valor</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute right-0 top-0 w-1/3 h-full bg-surface-container-low -z-0 opacity-40"></div>
+</section>
+<!-- NEW SECTION: Artefactos Cognitivos -->
+<section class="py-16 md:py-24 bg-[#0e0e0e] border-t border-outline-variant/10" id="artefactos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+<div class="mb-10 md:mb-16">
+<h2 class="font-['Libre_Franklin'] font-black text-3xl md:text-4xl md:text-5xl text-white uppercase tracking-tighter mb-4" style="">Artefactos Cognitivos</h2>
+<p class="font-['Montserrat'] text-lg text-on-surface-variant max-w-3xl" style="">
+                X Market Lab cuenta con dos artefactos cognitivos diseñados para potenciar la inteligencia estratégica.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:p-6 md:p-8">
+<!-- Card 1: TEODORUS -->
+<div class="bg-surface-container-low border border-outline-variant/30 p-1 group hover:border-tertiary/50 transition-all duration-500">
+<div class="relative overflow-hidden bg-black p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
+<div class="mb-8 w-full max-w-[280px] aspect-square relative">
+<img alt="TEODORUS Logo" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="/assets/img/teodorus-icono.png" style=""/>
+</div>
+<h3 class="font-['Montserrat'] font-black text-2xl sm:text-3xl text-white uppercase tracking-tighter mb-4" style="">TEODORUS ™</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto" style="">
+                        Sistemas avanzados de inteligencia para análisis de mercado y toma de decisiones estratégicas.
+                    </p>
+<div class="mt-8 pt-6 border-t border-outline-variant/10 w-full flex justify-center">
+<span class="material-symbols-outlined text-tertiary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" style="">database</span>
+</div>
+</div>
+</div>
+<!-- Card 2: ALEGU -->
+<div class="bg-surface-container-low border border-outline-variant/30 p-1 group hover:border-tertiary/50 transition-all duration-500">
+<div class="relative overflow-hidden bg-black p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
+<div class="mb-8 w-full max-w-[280px] aspect-square relative">
+<img alt="ALEGU Logo" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="/assets/img/alegu-icono.png" style=""/>
+</div>
+<h3 class="font-['Montserrat'] font-black text-2xl sm:text-3xl text-white uppercase tracking-tighter mb-4" style="">ALEGU ™</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto" style="">
+                        Plataforma de aprendizaje estructural diseñada para la integración profunda de capacidades de IA.
+                    </p>
+<div class="mt-8 pt-6 border-t border-outline-variant/10 w-full flex justify-center">
+<span class="material-symbols-outlined text-tertiary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" style="">model_training</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-16 md:py-24 bg-primary-container relative overflow-hidden" id="reciente">
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, #8ADC16 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
+<h2 class="font-['Libre_Franklin'] font-black text-3xl md:text-4xl md:text-4xl md:text-6xl text-white uppercase mb-8 leading-tight" style="">
+                    Más claridad para aprender, implementar y aprovechar la IA</h2>
+<p class="text-xl text-on-primary-container mb-8 md:mb-12 max-w-2xl mx-auto" style="">
+                    Si quieres usar la inteligencia artificial con más criterio, estructura y valor real, conversemos.
+                </p>
+<a class="bg-tertiary text-on-tertiary font-['Libre_Franklin'] font-black tracking-tight uppercase text-lg px-12 py-5 transition-transform hover:scale-105 active:scale-95 shadow-2xl inline-flex items-center justify-center text-center max-w-full" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">
+                    Solicitar conversación estratégica
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] py-10 md:py-12 px-4 sm:px-6 md:px-8 border-t border-[#43474E]/15">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 sm:p-6 md:p-8 md:gap-6 sm:p-5 sm:p-6 md:p-8 md:p-12">
+<div class="col-span-1 md:col-span-1">
+<div class="font-['Libre_Franklin'] font-bold text-lg text-white mb-4" style="">X MARKET LAB</div>
+<p class="text-slate-500 font-['Montserrat'] text-xs uppercase leading-relaxed mb-6" style="">Strategic intelligence and structural implementation of AI ecosystems.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-tertiary cursor-pointer" style="">share</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-tertiary cursor-pointer" style="">mail</span>
+</div>
+</div>
+<div class="">
+<h4 class="font-['Montserrat'] text-xs tracking-widest uppercase text-tertiary mb-6 font-bold" style="">Navegación</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="text-slate-500 font-['Montserrat'] text-xs tracking-widest uppercase hover:text-white transition-colors" href="/#soluciones" style="">Soluciones</a></li>
+<li class="" style=""><a class="text-slate-500 font-['Montserrat'] text-xs tracking-widest uppercase hover:text-white transition-colors" href="/profesionales/" style="">Profesionales</a></li>
+<li class="" style=""><a class="text-slate-500 font-['Montserrat'] text-xs tracking-widest uppercase hover:text-white transition-colors" href="/empresas/" style="">Empresas</a></li>
+</ul>
+</div>
+<div class="">
+<h4 class="font-['Montserrat'] text-xs tracking-widest uppercase text-tertiary mb-6 font-bold" style="">Compañía</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="text-slate-500 font-['Montserrat'] text-xs tracking-widest uppercase hover:text-white transition-colors" href="/laboratorio-ai/" style="">Laboratorio AI</a></li>
+<li class="" style=""><a class="text-slate-500 font-['Montserrat'] text-xs tracking-widest uppercase hover:text-white transition-colors" href="/privacidad/" style="">Privacidad</a></li>
+<li class="" style=""><a class="text-slate-500 font-['Montserrat'] text-xs tracking-widest uppercase hover:text-white transition-colors" href="/terminos/" style="">Términos</a></li>
+</ul>
+</div>
+<div class="md:text-right">
+<h4 class="font-['Montserrat'] text-xs tracking-widest uppercase text-tertiary mb-6 font-bold" style="">Newsletter</h4>
+<div class="flex flex-col gap-2">
+<input class="bg-surface-container-high border-none text-xs text-white placeholder:text-slate-600 focus:ring-1 focus:ring-tertiary py-3 px-4" placeholder="TU EMAIL" type="email"/>
+<a class="bg-slate-800 text-white font-bold text-xs py-3 uppercase hover:bg-tertiary hover:text-on-tertiary transition-colors" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">Subscribir</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-slate-500 font-['Montserrat'] text-[10px] tracking-widest uppercase" style="">© 2024 X MARKET LAB. STRATEGIC INTELLIGENCE RESERVED.</span>
+<div class="flex gap-6">
+<span class="text-slate-600 font-['Montserrat'] text-[10px] tracking-widest uppercase" style="">ECUADOR</span>
+<span class="text-slate-600 font-['Montserrat'] text-[10px] tracking-widest uppercase" style="">EEUU</span>
+<span class="text-slate-600 font-['Montserrat'] text-[10px] tracking-widest uppercase" style="">ESPAÑA</span>
+</div>
+</div>
+</footer>
+</body></html>
