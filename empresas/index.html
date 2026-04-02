@@ -93,10 +93,17 @@
     summary::-webkit-details-marker{display:none;} details[open] summary{opacity:.9;} </style>
 
 <style id="xmarketlab-emp-mobile-fixes">
-@media (max-width: 767px){
-  #hero{min-height:auto;padding-top:2rem;padding-bottom:4rem;}
-  #hero h1{font-size:clamp(2.4rem,12.5vw,4.2rem);line-height:.92;}
-  #hero p{font-size:1rem;line-height:1.65;}
+@media (max-width: 768px){
+  .hero-system{min-height:640px;padding-top:3.25rem;padding-bottom:2.25rem;align-items:flex-start;}
+  .hero-system__container{width:100%;padding-left:24px;padding-right:24px;gap:1.5rem;}
+  .hero-system__content{width:100%;max-width:100%;space-y:0;}
+  .hero-system__badge{font-size:clamp(0.75rem,3.4vw,0.875rem);letter-spacing:.18em;padding:.45rem .9rem;margin-bottom:1.1rem;}
+  .hero-system__title{font-size:clamp(2.75rem,9vw,4rem);line-height:.94;max-width:100%;margin-bottom:1rem;}
+  .hero-system__description{font-size:1.125rem;line-height:1.55;margin-bottom:1.25rem;max-width:100%;}
+  .hero-system__actions{padding-top:0;gap:.875rem;}
+  .hero-system__cta{width:100%;text-align:center;padding-left:1.5rem;padding-right:1.5rem;}
+  .hero-system__overlay{background:linear-gradient(90deg,rgba(19,19,19,.95) 0%,rgba(19,19,19,.88) 58%,rgba(19,19,19,.6) 100%);}
+  .hero-system img{object-position:72% center;}
 }
 </style>
 </head>
@@ -124,40 +131,35 @@
     </details>
   </div>
 </nav>
-<main>
+<main class="pt-24 md:pt-20">
 <!-- Hero Section -->
-<section class="relative min-h-[760px] md:min-h-[921px] flex items-center overflow-hidden bg-surface" id="hero">
-<!-- Background Geometry -->
+<section class="hero-system relative min-h-[760px] md:min-h-[921px] flex items-center overflow-hidden bg-surface" id="hero">
 <div class="absolute inset-0 z-0">
-<div class="absolute top-0 right-0 w-2/3 h-full bg-primary-container opacity-40 skew-x-[-12deg] translate-x-1/4"></div>
-<img class="absolute right-0 top-0 h-full w-1/2 object-cover grayscale opacity-60 mix-blend-luminosity" data-alt="Premium photography of a focused professional in a modern, architectural workspace wearing sophisticated business casual attire, reflecting strategic intelligence and leadership." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtxv_17jJcwxBIeTTF0LIKi7lfov80S0RCRLN1NtBWXWyfbAchBe34BzYsfvSffbZAKjT5UsUBKzkJh8x3dqCazgOMvatNVmMAIkUGZ2W44Lba2CdxVCXI_tPVdQpd5JtTJstWQDzXhLDk6B5q686K1mB0Go3sDFjmnPHzrDBZuYwGWBrn5Bocg-WtdpU9yRuEBR1EUwwWYaeoWxrqHgUrru7WJIyez7HEj5MbeIqvRJSNVE_Q_h4kEawGg0NlHN2APioB7O4Uc3Ro"/>
-<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+<div class="hero-system__overlay absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-70" data-alt="Premium photography of a focused professional in a modern, architectural workspace wearing sophisticated business casual attire, reflecting strategic intelligence and leadership." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtxv_17jJcwxBIeTTF0LIKi7lfov80S0RCRLN1NtBWXWyfbAchBe34BzYsfvSffbZAKjT5UsUBKzkJh8x3dqCazgOMvatNVmMAIkUGZ2W44Lba2CdxVCXI_tPVdQpd5JtTJstWQDzXhLDk6B5q686K1mB0Go3sDFjmnPHzrDBZuYwGWBrn5Bocg-WtdpU9yRuEBR1EUwwWYaeoWxrqHgUrru7WJIyez7HEj5MbeIqvRJSNVE_Q_h4kEawGg0NlHN2APioB7O4Uc3Ro"/>
 </div>
-<div class="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
-<div class="lg:col-span-7">
-<div class="inline-flex items-center space-x-2 mb-6">
-<span class="w-12 h-[1px] bg-tertiary"></span>
-<span class="text-tertiary font-label text-xs tracking-[0.3em] uppercase font-bold">Strategic Intelligence</span>
+<div class="hero-system__container container mx-auto px-4 sm:px-6 md:px-8 relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
+<div class="hero-system__content lg:col-span-8 space-y-8">
+<div class="hero-system__badge inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container border border-tertiary/20 text-tertiary font-label text-xs tracking-[0.2em] uppercase">
+<span class="w-2 h-2 bg-tertiary"></span> Estrategia para Empresas
 </div>
-<h1 class="font-['Libre_Franklin'] font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-white uppercase tracking-tighter mb-8">
+<h1 class="hero-system__title font-['Libre_Franklin'] font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-white uppercase tracking-tighter mb-8">
                         Implementa IA con claridad y sácale el <span class="text-tertiary">máximo</span> provecho
                     </h1>
-<p class="text-on-surface-variant text-lg md:text-xl max-w-xl mb-8 md:mb-12 font-body leading-relaxed">
+<p class="hero-system__description font-['Montserrat'] text-xl text-on-surface-variant max-w-2xl mb-8 md:mb-12 leading-relaxed">
                         Ayudamos a negocios y empresas a integrar inteligencia artificial de forma estructural para mejorar procesos, tomar mejores decisiones y generar más valor real.
                     </p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a class="bg-tertiary text-on-tertiary px-4 sm:px-6 md:px-8 py-5 font-headline font-bold uppercase tracking-tight text-lg hover:brightness-110 transition-all active:scale-95" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">
+<div class="hero-system__actions pt-4 flex flex-col sm:flex-row gap-4">
+<a class="hero-system__cta bg-tertiary text-on-tertiary px-4 sm:px-6 md:px-8 py-5 font-headline font-bold uppercase tracking-tight text-lg hover:brightness-110 transition-all active:scale-95" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">
                             Solicitar diagnóstico</a>
+<div class="flex items-center gap-4 text-outline-variant font-label text-xs uppercase tracking-widest pl-4">
+<span class="w-12 h-px bg-outline-variant/30"></span>
+                        Strategic Intelligence
+                    </div>
 </div>
 </div>
 </div>
-<!-- Directional Accent -->
-<div class="absolute bottom-12 right-12 hidden lg:block">
-<div class="flex items-center space-x-4 rotate-90 origin-right">
-<span class="text-outline text-xs tracking-widest uppercase">Scroll to explore</span>
-<span class="w-24 h-[1px] bg-outline"></span>
-</div>
-</div>
+<div class="absolute bottom-0 right-0 w-1/3 h-1/2 border-l border-t border-outline-variant/15 diagonal-bg opacity-20"></div>
 </section>
 <!-- Problem Section -->
 <section class="py-16 md:py-24 bg-surface-container-low border-y border-outline-variant/15" id="problema">
