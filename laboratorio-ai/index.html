@@ -169,10 +169,11 @@
     .orbit-ring.r3{width:min(38vw,230px); height:min(38vw,230px);}
   }
   @media (max-width: 767px){
-    :root{ --hero-top: 106px; --hero-bottom: 44px; --hero-gap: 18px; --title-size: clamp(2rem, 12vw, 4rem); --title-line:.94; }
+    :root{ --hero-top: 96px; --hero-bottom: 40px; --hero-gap: 16px; --title-size: clamp(1.65rem, 10.5vw, 2.7rem); --title-line:1; }
     .hero-stage{min-height:calc(100svh - 72px)}
     .hero-shell{justify-content:flex-start;}
     .hero-animation{width:min(100%, 520px); height:clamp(208px, 58vw, 300px);}
+    .coming-title{letter-spacing:-.03em;padding:0 .02em;text-wrap:pretty;}
     .hero-stage::after, .orbit-ring, .node{top:28%;}
     .orbit-ring.r1{width:min(94vw,380px); height:min(94vw,380px);}
     .orbit-ring.r2{width:min(70vw,270px); height:min(70vw,270px);}
@@ -183,10 +184,10 @@
     @keyframes floatNodeThree{0%{transform:translate(82px,72px)}25%{transform:translate(-86px,68px)}50%{transform:translate(-92px,-73px)}75%{transform:translate(84px,-70px)}100%{transform:translate(82px,72px)}}
   }
   @media (max-width: 420px){
-    :root{ --hero-top: 98px; --hero-bottom: 38px; --title-size: clamp(1.85rem, 11.8vw, 3.35rem); }
+    :root{ --hero-top: 92px; --hero-bottom: 32px; --title-size: clamp(1.45rem, 10vw, 2.25rem); }
     .hero-animation{height:clamp(190px, 56vw, 250px);}
-    .coming-title{letter-spacing:-.045em;line-height:.98;}
-    .hero-note{font-size:.98rem;line-height:1.7;}
+    .coming-title{letter-spacing:-.02em;line-height:1;}
+    .hero-note{font-size:.9rem;line-height:1.62;}
   }
 </style>
 </head>

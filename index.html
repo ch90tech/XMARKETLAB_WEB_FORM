@@ -97,6 +97,11 @@
   #reciente h2{font-size:clamp(2rem,10vw,3rem);line-height:1.02;}
   #reciente p{font-size:1rem;line-height:1.65;}
   #reciente a{display:inline-flex;align-items:center;justify-content:center;width:min(100%,22rem);padding:1rem 1.25rem;font-size:1rem;line-height:1.15;text-align:center;white-space:normal;word-break:normal;}
+  .artefact-card-inner{padding:1rem;}
+  .artefact-card-logo{max-width:180px;margin-bottom:1.25rem;}
+  .artefact-card-title{font-size:1.5rem;line-height:1.05;}
+  .artefact-card-copy{font-size:.9rem;line-height:1.55;}
+  .artefact-card-footer{margin-top:1.25rem;padding-top:1rem;}
 }
 </style>
 </head>
@@ -290,30 +295,30 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:p-6 md:p-8">
 <!-- Card 1: TEODORUS -->
 <div class="bg-surface-container-low border border-outline-variant/30 p-1 group hover:border-tertiary/50 transition-all duration-500">
-<div class="relative overflow-hidden bg-black p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
-<div class="mb-8 w-full max-w-[280px] aspect-square relative">
+<div class="artefact-card-inner relative overflow-hidden bg-black p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
+<div class="artefact-card-logo mb-8 w-full max-w-[280px] aspect-square relative">
 <img alt="TEODORUS Logo" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="/assets/img/teodorus-icono.png" style=""/>
 </div>
-<h3 class="font-['Montserrat'] font-black text-2xl sm:text-3xl text-white uppercase tracking-tighter mb-4" style="">TEODORUS ™</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto" style="">
+<h3 class="artefact-card-title font-['Montserrat'] font-black text-2xl sm:text-3xl text-white uppercase tracking-tighter mb-4" style="">TEODORUS ™</h3>
+<p class="artefact-card-copy text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto" style="">
                         Sistemas avanzados de inteligencia para análisis de mercado y toma de decisiones estratégicas.
                     </p>
-<div class="mt-8 pt-6 border-t border-outline-variant/10 w-full flex justify-center">
+<div class="artefact-card-footer mt-8 pt-6 border-t border-outline-variant/10 w-full flex justify-center">
 <span class="material-symbols-outlined text-tertiary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" style="">database</span>
 </div>
 </div>
 </div>
 <!-- Card 2: ALEGU -->
 <div class="bg-surface-container-low border border-outline-variant/30 p-1 group hover:border-tertiary/50 transition-all duration-500">
-<div class="relative overflow-hidden bg-black p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
-<div class="mb-8 w-full max-w-[280px] aspect-square relative">
+<div class="artefact-card-inner relative overflow-hidden bg-black p-5 sm:p-6 md:p-8 h-full flex flex-col items-center text-center">
+<div class="artefact-card-logo mb-8 w-full max-w-[280px] aspect-square relative">
 <img alt="ALEGU Logo" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="/assets/img/alegu-icono.png" style=""/>
 </div>
-<h3 class="font-['Montserrat'] font-black text-2xl sm:text-3xl text-white uppercase tracking-tighter mb-4" style="">ALEGU ™</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto" style="">
+<h3 class="artefact-card-title font-['Montserrat'] font-black text-2xl sm:text-3xl text-white uppercase tracking-tighter mb-4" style="">ALEGU ™</h3>
+<p class="artefact-card-copy text-on-surface-variant text-sm leading-relaxed max-w-sm mx-auto" style="">
                         Plataforma de aprendizaje estructural diseñada para la integración profunda de capacidades de IA.
                     </p>
-<div class="mt-8 pt-6 border-t border-outline-variant/10 w-full flex justify-center">
+<div class="artefact-card-footer mt-8 pt-6 border-t border-outline-variant/10 w-full flex justify-center">
 <span class="material-symbols-outlined text-tertiary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" style="">model_training</span>
 </div>
 </div>
