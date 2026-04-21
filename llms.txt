@@ -1,0 +1,18 @@
+# X Market Lab
+
+> Sitio oficial de X Market Lab: estrategia, adopción y ejecución de IA para empresas y profesionales.
+
+## Sitio
+- https://www.xmarketlab.com/
+- https://www.xmarketlab.com/empresas/
+- https://www.xmarketlab.com/profesionales/
+- https://www.xmarketlab.com/laboratorio-ai/
+- https://www.xmarketlab.com/laboratorio-ai/el-costo-de-no-integrar-ia/
+- https://www.xmarketlab.com/privacidad/
+- https://www.xmarketlab.com/terminos/
+
+## Enfoque
+- Estrategia de IA aplicada a negocio
+- Priorización de casos de uso
+- Implementación y adopción en equipos
+- Formación para profesionales y liderazgo
