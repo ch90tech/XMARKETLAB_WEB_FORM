@@ -1,79 +1,299 @@
 <!DOCTYPE html>
-<html class="dark" lang="es">
+<html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>X MARKET LAB | El costo real de no integrar IA</title>
-<link rel="icon" type="image/png" href="/assets/img/Logo%20transparente%20XML.png"/>
-<link rel="apple-touch-icon" href="/assets/img/Logo%20transparente%20XML.png"/>
-<meta property="og:image" content="https://www.xmarketlab.com/assets/img/Logo%20transparente%20XML.png"/>
-<meta property="og:image:type" content="image/png"/>
-<meta property="og:image:alt" content="Logo de X Market Lab"/>
-<meta name="description" content="Artefacto 1 de X Market Lab: El costo real de no integrar IA."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;900&family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Public+Sans:wght@700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>
-  tailwind.config = {darkMode:'class',theme:{extend:{colors:{tertiary:'#8ADC16',surface:'#131313',onSurface:'#E5E2E1',muted:'#A7ADB7'},fontFamily:{headline:['Public Sans'],body:['Inter'],display:['Libre Franklin'],accent:['Montserrat']}}}}
-</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Costo de No Integrar IA — X Market Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  .material-symbols-outlined {font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}
-  .artifact-stage{min-height:calc(100vh - 76px);background:linear-gradient(180deg,#07111f 0%,#050a14 42%,#03060f 100%);}
-  .artifact-shell{width:min(900px,100%);margin-inline:auto;padding:clamp(2.1rem,5vw,4.8rem) 1rem clamp(3rem,7vw,6rem);}
-  .artifact-kicker{font:600 .7rem/1 Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8ADC16;margin:0;}
-  .artifact-title{margin:.8rem 0 1rem;font:900 clamp(2rem,6vw,4rem)/.95 'Libre Franklin',sans-serif;letter-spacing:-.05em;color:#f7f9ff;text-transform:uppercase;}
-  .artifact-short{margin:0 0 1.25rem;color:rgba(229,226,225,.88);font:500 clamp(1rem,2vw,1.12rem)/1.65 Inter,sans-serif;}
-  .artifact-long{margin:0;color:rgba(229,226,225,.74);font:500 clamp(.98rem,1.9vw,1.07rem)/1.72 Inter,sans-serif;max-width:68ch;}
+:root{
+  --dark:#1B2A3B;--dark2:#111e2a;--dark3:#0c1520;
+  --green:#82d300;--gd:rgba(130,211,0,.10);--gm:rgba(130,211,0,.22);
+  --graphite:#5B5B5B;--w:#ffffff;
+  --mu:rgba(255,255,255,.45);--mu2:rgba(255,255,255,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--dark3);color:var(--w);overflow-x:hidden}
+
+#prog{position:fixed;top:0;left:0;height:3px;background:var(--green);z-index:999;width:0%;transition:width .08s linear}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100vh;
+  display:grid;grid-template-columns:55% 45%;
+  align-items:center;padding:0 8vw;gap:40px;overflow:hidden;
+}
+.hbg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80') center/cover no-repeat;
+  opacity:.13;z-index:0;
+}
+.hov{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--dark3) 40%,rgba(12,21,32,.7) 100%);
+  z-index:1;
+}
+.hleft{position:relative;z-index:2;padding:100px 0 80px}
+.hright{position:relative;z-index:2;display:flex;flex-direction:column;gap:14px;padding:100px 0 80px}
+
+.btag{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--green);margin-bottom:28px}
+.bdot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+
+.hero h1{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:clamp(36px,5.5vw,68px);line-height:1.04;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hsub{font-size:15px;color:var(--mu);line-height:1.8;max-width:460px;margin-bottom:36px}
+
+.hsc{background:rgba(255,255,255,.04);border:1px solid rgba(130,211,0,.18);border-radius:12px;padding:18px 22px;display:flex;align-items:center;gap:14px;transition:border-color .3s;cursor:default}
+.hsc:hover{border-color:rgba(130,211,0,.45)}
+.snum{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:32px;color:var(--green);line-height:1;white-space:nowrap}
+.slbl{font-size:11px;font-weight:500;color:var(--mu);line-height:1.5}
+.sico{flex-shrink:0;width:34px;height:34px;opacity:.55}
+
+.shint{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mu2)}
+.sline{width:36px;height:1px;background:linear-gradient(to right,var(--green),transparent)}
+
+/* ── BAND ── */
+.band{background:var(--green);padding:18px 0;overflow:hidden;white-space:nowrap}
+.band-inner{display:inline-flex;animation:mq 22s linear infinite}
+.band-txt{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dark);padding:0 28px}
+.band-sep{color:var(--dark);opacity:.35}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTION UTILS ── */
+.stag{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.sh{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:clamp(26px,3.5vw,44px);line-height:1.12;margin-bottom:12px}
+.sp{font-size:14px;color:var(--mu);line-height:1.85;max-width:520px;margin-bottom:48px}
+.dv{width:36px;height:3px;background:var(--green);margin-bottom:22px}
+
+/* ── LEVELS ── */
+.lvl-wrap{padding:90px 8vw;background:var(--dark2);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.lvl-photo{position:relative;border-radius:16px;overflow:hidden;height:520px}
+.lvl-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(.65) saturate(.9)}
+.lvl-pov{position:absolute;inset:0;background:linear-gradient(to top,var(--dark2) 0%,transparent 55%)}
+.lvl-cap{position:absolute;bottom:24px;left:24px;right:24px;font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;font-style:italic}
+.lvl-track{display:flex;flex-direction:column;gap:3px}
+
+.lvi{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border-radius:10px;cursor:pointer;border:1px solid transparent;transition:all .28s}
+.lvi:hover,.lvi.sel{background:rgba(255,255,255,.03);border-color:rgba(130,211,0,.2)}
+.lvn{flex-shrink:0;width:42px;height:42px;border-radius:50%;border:2px solid;display:flex;align-items:center;justify-content:center;font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:14px;transition:transform .25s}
+.lvi:hover .lvn{transform:scale(1.1)}
+.lv0{border-color:#e74c3c;color:#e74c3c;background:rgba(231,76,60,.08)}
+.lv1{border-color:#e67e22;color:#e67e22;background:rgba(230,126,34,.08)}
+.lv2{border-color:#f1c40f;color:#f1c40f;background:rgba(241,196,15,.08)}
+.lv3{border-color:#3498db;color:#3498db;background:rgba(52,152,219,.08)}
+.lv4{border-color:var(--green);color:var(--green);background:var(--gd)}
+.lvnm{font-weight:700;font-size:14px;margin-bottom:2px}
+.lvbg{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-bottom:5px}
+.lvds{font-size:12px;color:var(--mu);line-height:1.65}
+
+/* ── PAIN POINTS ── */
+.pp{padding:90px 8vw;background:var(--dark3)}
+.frow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.fb{background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--mu);border-radius:6px;padding:8px 18px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .22s}
+.fb:hover,.fb.on{background:var(--green);border-color:var(--green);color:var(--dark)}
+
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.bc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:26px;position:relative;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.bc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.bc:hover::after,.bc.open::after{transform:scaleX(1)}
+.bc:hover,.bc.open{border-color:rgba(130,211,0,.28);background:rgba(130,211,0,.05);transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.b1{grid-column:span 7}.b2{grid-column:span 5}.b3{grid-column:span 4}.b4{grid-column:span 8}
+.b5{grid-column:span 6}.b6{grid-column:span 6}.b7{grid-column:span 5}.b8{grid-column:span 7}
+
+.ply{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:13px}
+.pst{background:rgba(52,152,219,.12);color:#3498db}
+.pop{background:rgba(243,156,18,.12);color:#e67e22}
+.pid{background:rgba(231,76,60,.12);color:#e74c3c}
+.pnum{font-size:10px;font-weight:700;color:rgba(255,255,255,.18);letter-spacing:.1em;margin-bottom:3px}
+.pico{margin-bottom:10px}
+.pico svg{width:30px;height:30px}
+.ptit{font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:16px;line-height:1.25;margin-bottom:9px}
+.pten{font-size:13px;color:var(--mu);line-height:1.7;margin-bottom:13px;font-style:italic}
+.exb{display:flex;align-items:center;gap:7px;background:none;border:none;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);cursor:pointer;transition:gap .2s;padding:0}
+.exb:hover{gap:12px}
+.exic{width:18px;height:18px;border:1px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;transition:transform .3s}
+.bc.open .exic{transform:rotate(45deg)}
+.pbody{display:none;margin-top:16px;animation:fs .3s ease}
+.bc.open .pbody{display:block}
+@keyframes fs{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.dblk{background:rgba(0,0,0,.25);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:13px 15px;margin-bottom:11px}
+.dnum{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:28px;color:var(--green);line-height:1;margin-bottom:2px}
+.dlbl{font-size:12px;color:var(--mu);line-height:1.5}
+.dr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:11px}
+.ptr{background:var(--gd);border-radius:8px;padding:12px 15px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:10px}
+.ptr strong{color:var(--green);font-weight:700}
+.psrc{font-size:10px;color:rgba(255,255,255,.22);font-style:italic}
+
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.sph{position:relative;overflow:hidden}
+.sph img{width:100%;height:100%;object-fit:cover;filter:brightness(.6) saturate(.85);transition:filter .4s}
+.sph:hover img{filter:brightness(.75) saturate(1)}
+.spov{position:absolute;inset:0;background:linear-gradient(to right,var(--dark3) 0%,transparent 50%)}
+.scnt{background:var(--dark3);padding:72px 8vw 72px 56px;display:flex;flex-direction:column;justify-content:center}
+.ckrow{display:flex;align-items:center;gap:12px;padding:15px 0;border-top:1px solid rgba(255,255,255,.07)}
+
+.qsec{padding:90px 8vw;background:var(--dark2);position:relative;overflow:hidden}
+.qbg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1400&q=70') center/cover no-repeat;opacity:.07;z-index:0}
+.qinner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center}
+.qmk{font-family:'Libre Franklin',sans-serif;font-size:96px;color:var(--green);opacity:.22;line-height:.4;display:block;margin-bottom:28px}
+.qtxt{font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:clamp(20px,3vw,34px);line-height:1.42;margin-bottom:20px}
+.qtxt em{font-style:normal;color:var(--green)}
+.qatt{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mu2)}
+
+.lyrsec{padding:90px 8vw;background:var(--dark3)}
+.lyrgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.lcard{border-radius:14px;padding:36px 28px;position:relative;overflow:hidden;transition:transform .3s}
+.lcard:hover{transform:translateY(-6px)}
+.lstr{background:linear-gradient(145deg,rgba(52,152,219,.12),rgba(52,152,219,.04));border:1px solid rgba(52,152,219,.2)}
+.lop{background:linear-gradient(145deg,rgba(243,156,18,.12),rgba(243,156,18,.04));border:1px solid rgba(243,156,18,.2)}
+.lid{background:linear-gradient(145deg,rgba(231,76,60,.12),rgba(231,76,60,.04));border:1px solid rgba(231,76,60,.2)}
+.lnm{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:48px;opacity:.07;position:absolute;top:12px;right:18px}
+.lic{margin-bottom:14px}.lic svg{width:38px;height:38px}
+.lttl{font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:18px;margin-bottom:9px}
+.ldsc{font-size:13px;color:var(--mu);line-height:1.75;margin-bottom:16px}
+.ltags{display:flex;flex-wrap:wrap;gap:6px}
+.ltg{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px}
+.lstr .ltg{background:rgba(52,152,219,.15);color:#3498db}
+.lop .ltg{background:rgba(243,156,18,.15);color:#e67e22}
+.lid .ltg{background:rgba(231,76,60,.15);color:#e74c3c}
+
+.clsec{padding:90px 8vw;background:var(--dark2)}
+.clgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+.clcard{border-radius:16px;overflow:hidden;position:relative;cursor:pointer;transition:transform .3s}
+.clcard:hover{transform:translateY(-6px)}
+.clph{width:100%;height:220px;object-fit:cover;display:block;filter:brightness(.55) saturate(.8);transition:filter .4s}
+.clcard:hover .clph{filter:brightness(.7) saturate(1)}
+.clbd{padding:30px}
+.clct{font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:block}
+.cltit{font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:20px;line-height:1.3;margin-bottom:12px}
+.cldsc{font-size:13px;color:var(--mu);line-height:1.75;margin-bottom:24px}
+.clpro{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.clbiz{background:rgba(130,211,0,.05);border:1px solid rgba(130,211,0,.18)}
+
+.cta{position:relative;overflow:hidden;padding:110px 8vw;text-align:center}
+.ctabg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=70') center/cover no-repeat;opacity:.12;z-index:0}
+.ctaov{position:absolute;inset:0;background:linear-gradient(180deg,var(--dark3),rgba(18,30,42,.96) 50%,var(--dark3));z-index:1}
+.ctain{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.ctaey{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--green);margin-bottom:24px}
+.ctah{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:1.06;margin-bottom:20px}
+.ctah em{font-style:normal;color:var(--green)}
+.ctas{font-size:15px;color:var(--mu);line-height:1.8;margin-bottom:44px;max-width:560px;margin-left:auto;margin-right:auto}
+.ctabs{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+
+.btn1{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:var(--dark);font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:16px 32px;border-radius:8px;border:none;cursor:pointer;transition:all .25s;text-decoration:none}
+.btn1:hover{background:#96e800;transform:translateY(-3px);box-shadow:0 18px 44px rgba(130,211,0,.28)}
+.btn2{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--w);font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:15px 28px;border-radius:8px;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:all .25s;text-decoration:none}
+.btn2:hover{border-color:var(--w);background:rgba(255,255,255,.06)}
+
+.ctafeats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+.ctafeat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:20px;text-align:left;transition:border-color .25s}
+.ctafeat:hover{border-color:rgba(130,211,0,.25)}
+.ctafeat svg{width:24px;height:24px;margin-bottom:10px;opacity:.7}
+.ctaftt{font-weight:700;font-size:13px;margin-bottom:5px;color:var(--w)}
+.ctaftd{font-size:12px;color:var(--mu);line-height:1.6}
+
+.ctatr{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;color:var(--mu2);flex-wrap:wrap;margin-top:32px}
+.trdot{width:4px;height:4px;background:var(--green);border-radius:50%;opacity:.5}
+
+.srcsec{padding:52px 8vw;background:var(--dark3);border-top:1px solid rgba(255,255,255,.05)}
+.srct{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:18px}
+.srcg{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.srci{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:12px 14px}
+.srco{font-size:11px;font-weight:700;color:var(--green);margin-bottom:3px}
+.srcd{font-size:10px;color:rgba(255,255,255,.28);line-height:1.5}
+
+footer{padding:20px 8vw;background:#06090d;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(130,211,0,.1);flex-wrap:wrap;gap:10px}
+.fbrnd{font-family:'Libre Franklin',sans-serif;font-weight:900;font-size:13px;letter-spacing:.07em}
+.fbrnd span{color:var(--green)}
+.fnote{font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.07em}
+
+.fu{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:80px}
+  .hright{display:none}
+  .lvl-wrap{grid-template-columns:1fr}
+  .lvl-photo{height:260px}
+  .split{grid-template-columns:1fr}
+  .lyrgrid{grid-template-columns:1fr}
+  .clgrid{grid-template-columns:1fr}
+  .srcg{grid-template-columns:1fr 1fr}
+  .ctafeats{grid-template-columns:1fr}
+  .b1,.b2,.b3,.b4,.b5,.b6,.b7,.b8{grid-column:span 12}
+}
 </style>
 </head>
-<body class="bg-surface text-onSurface font-body overflow-x-hidden antialiased">
-<nav class="fixed top-0 z-50 w-full bg-[#001f3f]/95 backdrop-blur border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 flex items-center justify-between gap-4">
-    <a class="font-['Libre_Franklin'] font-black text-lg sm:text-xl tracking-tighter text-white uppercase shrink-0 inline-flex items-center gap-2" href="/"><img alt="Logo X Market Lab" class="w-8 h-8 object-contain" src="/assets/img/Logo%20transparente%20XML.png"/>X MARKET LAB</a>
-    <div class="hidden md:flex gap-6 lg:gap-8 items-center">
-      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="/#soluciones">Soluciones</a>
-      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="/profesionales/">Profesionales</a>
-      <a class="text-slate-300 font-['Montserrat'] font-medium text-sm hover:text-[#8ADC16] transition-colors duration-300" href="/empresas/">Empresas</a>
-      <a class="text-[#8ADC16] font-['Montserrat'] font-medium text-sm" href="/laboratorio-ai/">Laboratorio AI</a>
-    </div>
-    <a class="hidden md:inline-flex bg-tertiary text-black font-['Libre_Franklin'] font-bold tracking-tight uppercase text-xs lg:text-sm px-4 lg:px-6 py-2.5 active:scale-95 duration-150 transition-all text-center" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">Solicitar Diagnóstico</a>
-    <details class="md:hidden relative">
-      <summary class="list-none cursor-pointer inline-flex items-center justify-center w-12 h-12 border border-white/15 text-white bg-white/5"><span class="material-symbols-outlined">menu</span></summary>
-      <div class="absolute right-0 mt-3 w-[min(18rem,calc(100vw-2rem))] bg-[#111317] border border-white/10 shadow-2xl p-4 flex flex-col gap-3">
-        <a class="text-slate-200 font-['Montserrat'] text-sm" href="/#soluciones">Soluciones</a>
-        <a class="text-slate-200 font-['Montserrat'] text-sm" href="/profesionales/">Profesionales</a>
-        <a class="text-slate-200 font-['Montserrat'] text-sm" href="/empresas/">Empresas</a>
-        <a class="text-[#8ADC16] font-['Montserrat'] text-sm" href="/laboratorio-ai/">Laboratorio AI</a>
-        <a class="mt-2 inline-flex justify-center bg-tertiary text-black font-['Libre_Franklin'] font-bold tracking-tight uppercase text-xs px-4 py-3" href="https://429z8h.share-na2.hsforms.com/2_dhzEUpeRTy63xe10QBDMA" target="_blank" rel="noopener noreferrer">Solicitar Diagnóstico</a>
-      </div>
-    </details>
+<body>
+<div id="prog"></div>
+
+<section class="hero">
+  <div class="hbg"></div><div class="hov"></div>
+  <div class="hleft">
+    <div class="btag"><div class="bdot"></div>X Market Lab · Laboratorio de Arquitectura de Decisión</div>
+    <h1>El costo real<br>de no integrar <em>IA</em></h1>
+    <p class="hsub">No es un problema de herramientas. Es un problema de estructura. Aquí está la evidencia de lo que ocurre cuando los profesionales operan sin arquitectura de decisión en la economía algorítmica.</p>
+    <div class="shint"><div class="sline"></div>Explorar el diagnóstico</div>
   </div>
-</nav>
-<main class="pt-[76px]">
-  <section class="artifact-stage">
-    <div class="artifact-shell">
-      <p class="artifact-kicker">Artefacto 1</p>
-      <h1 class="artifact-title">El costo real de no integrar IA</h1>
-      <p class="artifact-short">No es un problema de herramientas. Es un problema de estructura.</p>
-      <p class="artifact-long">Un diagnóstico sobre brecha profesional, obsolescencia, sobrecarga cognitiva y pérdida de criterio en la economía algorítmica.</p>
-    </div>
-  </section>
-</main>
-<footer class="border-t border-white/10 bg-[#0f1013]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-    <div>
-      <div class="font-display font-black text-xl tracking-tighter uppercase">X MARKET LAB</div>
-      <div class="text-white/55 text-sm mt-2">Claridad estratégica para aprender y aplicar inteligencia artificial.</div>
-    </div>
-    <ul class="flex flex-wrap gap-5 text-xs uppercase tracking-[0.22em] text-white/55">
-      <li><a class="hover:text-white" href="/">Inicio</a></li>
-      <li><a class="hover:text-white" href="/profesionales/">Profesionales</a></li>
-      <li><a class="hover:text-white" href="/empresas/">Empresas</a></li>
-      <li><a class="text-tertiary" href="/laboratorio-ai/">Laboratorio AI</a></li>
-      <li><a class="hover:text-white" href="/privacidad/">Privacidad</a></li>
-      <li><a class="hover:text-white" href="/terminos/">Términos</a></li>
-    </ul>
+  <div class="hright">
+    <div class="hsc fu"><svg class="sico" viewBox="0 0 34 34" fill="none"><path d="M5 26L13 16L19 22L27 10" stroke="#82d300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="27" cy="10" r="3" fill="#82d300" opacity=".35"/></svg><div><div class="snum">56%</div><div class="slbl">Prima salarial · roles con IA<br>vs. sin ellas — PwC 2025</div></div></div>
+    <div class="hsc fu d1"><svg class="sico" viewBox="0 0 34 34" fill="none"><rect x="4" y="20" width="6" height="10" rx="1.5" stroke="#82d300" stroke-width="1.8"/><rect x="14" y="14" width="6" height="16" rx="1.5" stroke="#82d300" stroke-width="1.8"/><rect x="24" y="6" width="6" height="24" rx="1.5" stroke="#82d300" stroke-width="1.8"/></svg><div><div class="snum">$5.5T</div><div class="slbl">Costo global de la brecha<br>de habilidades — IDC 2025</div></div></div>
+    <div class="hsc fu d2"><svg class="sico" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="10" stroke="#82d300" stroke-width="1.8"/><path d="M17 9v8l5 3" stroke="#82d300" stroke-width="1.8" stroke-linecap="round"/></svg><div><div class="snum">66%</div><div class="slbl">Más rápida evolución de<br>roles con exposición a IA</div></div></div>
+    <div class="hsc fu d3"><svg class="sico" viewBox="0 0 34 34" fill="none"><path d="M9 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#82d300" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="12" r="4" stroke="#82d300" stroke-width="1.8"/><path d="M25 20c2 1 3.5 3 3.5 5.5" stroke="#82d300" stroke-width="1.8" stroke-linecap="round" opacity=".45"/></svg><div><div class="snum">94%</div><div class="slbl">De líderes enfrenta escasez<br>crítica de talento IA — WEF</div></div></div>
   </div>
-</footer>
+</section>
+
+<div class="band" aria-hidden="true"><div class="band-inner"><span class="band-txt">Ventaja estructural</span><span class="band-sep">×</span><span class="band-txt">Arquitectura de decisión</span><span class="band-sep">×</span><span class="band-txt">Sin modelo los datos son ruido</span><span class="band-sep">×</span><span class="band-txt">Decidir mejor es competir mejor</span><span class="band-sep">×</span><span class="band-txt">La IA amplifica estructuras</span><span class="band-sep">×</span><span class="band-txt">Ventaja estructural</span><span class="band-sep">×</span><span class="band-txt">Arquitectura de decisión</span><span class="band-sep">×</span><span class="band-txt">Sin modelo los datos son ruido</span><span class="band-sep">×</span><span class="band-txt">Decidir mejor es competir mejor</span><span class="band-sep">×</span><span class="band-txt">La IA amplifica estructuras</span><span class="band-sep">×</span></div></div>
+
+<section class="lvl-wrap">
+  <div><div class="lvl-photo"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Profesional en entorno de toma de decisiones estratégicas"><div class="lvl-pov"></div><p class="lvl-cap">La mayoría de los profesionales opera entre niveles 1 y 3. Es en esa franja donde el costo estructural se acumula en silencio.</p></div></div>
+  <div>
+    <div class="stag fu">01 — Diagnóstico</div><h2 class="sh fu d1">¿Dónde estás en el espectro de consciencia?</h2><div class="dv fu d2"></div><p class="sp fu d3" style="margin-bottom:32px">Tu nivel determina el tipo de fricción que experimentas. Haz clic en el tuyo.</p>
+    <div class="lvl-track">
+      <div class="lvi fu" onclick="selLv(this)"><div class="lvn lv0">0</div><div><div class="lvnm">Ignorancia activa</div><span class="lvbg" style="background:rgba(231,76,60,.14);color:#e74c3c">Riesgo invisible</span><div class="lvds">No percibe cómo la IA afecta su campo. La brecha crece en silencio sin ninguna alarma visible.</div></div></div>
+      <div class="lvi fu d1" onclick="selLv(this)"><div class="lvn lv1">1</div><div><div class="lvnm">Conciencia superficial</div><span class="lvbg" style="background:rgba(230,126,34,.14);color:#e67e22">Zona de riesgo</span><div class="lvds">Conoce ChatGPT pero no lo integra. Falsa sensación de seguridad: "ya lo veré cuando sea necesario".</div></div></div>
+      <div class="lvi fu d2" onclick="selLv(this)"><div class="lvn lv2">2</div><div><div class="lvnm">Uso táctico desorganizado</div><span class="lvbg" style="background:rgba(241,196,15,.12);color:#f1c40f">Fricción acelerada</span><div class="lvds">Usa herramientas sin arquitectura. Confunde herramienta con estrategia. Amplifica ruido, no ventaja.</div></div></div>
+      <div class="lvi fu d3" onclick="selLv(this)"><div class="lvn lv3">3</div><div><div class="lvnm">Integración parcial con fricción</div><span class="lvbg" style="background:rgba(52,152,219,.12);color:#3498db">En transición</span><div class="lvds">Usa IA sin marco conceptual claro. Experimenta AI brain fry, resultados inconsistentes, sobrecarga.</div></div></div>
+      <div class="lvi fu d4" onclick="selLv(this)"><div class="lvn lv4">4</div><div><div class="lvnm">Integración estructural</div><span class="lvbg" style="background:rgba(130,211,0,.12);color:#82d300">Ventaja real</span><div class="lvds">Usa IA como amplificador de estructuras propias. Tiene modelo, criterio y arquitectura de decisión.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pp"><div class="stag fu">02 — Puntos de dolor</div><h2 class="sh fu d1">Lo que ocurre cuando no hay modelo</h2><div class="dv fu d2"></div><p class="sp fu d3">Ocho puntos documentados por organismos internacionales, académicos y firmas globales. Haz clic en cada uno para ver la evidencia.</p>
+  <div class="frow fu"><button class="fb on" data-f="all">Todos</button><button class="fb" data-f="str">Estructural</button><button class="fb" data-f="op">Operativa</button><button class="fb" data-f="id">Identitaria</button></div>
+  <div class="bento" id="bento"><div class="bc b1 fu" data-l="str" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><path d="M3 24L11 13L17 19L25 7" stroke="#82d300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="25" cy="7" r="3" fill="#82d300" opacity=".3"/><path d="M23 23h4M21 19h6" stroke="#3498db" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg></div><span class="ply pst">Capa estructural</span><div class="pnum">01</div><h3 class="ptit">Brecha salarial y de relevancia profesional</h3><p class="pten">"Dos profesionales, mismo título, mismo sector. Uno integra IA. El otro no. En 24 meses no son equivalentes: son perfiles distintos en el mercado."</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dr"><div class="dblk"><div class="dnum">56%</div><div class="dlbl">Prima salarial roles con IA — PwC 2025</div></div><div class="dblk"><div class="dnum">66%</div><div class="dlbl">Más rápida evolución de roles expuestos a IA</div></div></div><div class="ptr"><strong>Traducción práctica:</strong> El mercado ya no remunera solo el conocimiento. Remunera el criterio aplicado con ventaja estructural. El diferencial no es la herramienta. Es el modelo.</div><div class="psrc">PwC Global AI Jobs Barometer 2025 · IDC Analyst Brief: Closing the Gap</div></div></div>
+  <div class="bc b2 fu d1" data-l="str" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="10" stroke="#3498db" stroke-width="1.8"/><path d="M15 7v8l4 4" stroke="#3498db" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="ply pst">Capa estructural</span><div class="pnum">02</div><h3 class="ptit">Obsolescencia acelerada de habilidades</h3><p class="pten">El 40% de las habilidades centrales cambiará para 2030. No es rezago marginal: es devaluación estructural del perfil profesional.</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dblk"><div class="dnum">40%</div><div class="dlbl">De habilidades clave quedarán obsoletas para 2030 — WEF Future of Jobs 2024</div></div><div class="ptr"><strong>Trade-off oculto:</strong> Cada mes sin actualizar el modelo mental es deuda de habilidades que acumula intereses compuestos.</div><div class="psrc">WEF Future of Jobs Survey 2024 · Kenan Institute, UNC</div></div></div>
+  <div class="bc b3 fu d2" data-l="str" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><path d="M15 3v11M15 27v-4" stroke="#e74c3c" stroke-width="2" stroke-linecap="round"/><path d="M7 11l8 4 8-4" stroke="#e74c3c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/><path d="M3 20c3 0 4 4 12 4s9-4 12-4" stroke="#e74c3c" stroke-width="1.5" stroke-linecap="round" opacity=".3"/></svg></div><span class="ply pst">Capa estructural</span><div class="pnum">03</div><h3 class="ptit">Desplazamiento silencioso sin notificación</h3><p class="pten">No hay despido. Hay erosión lenta de influencia. El profesional sigue empleado pero progresivamente marginado.</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dblk"><div class="dnum">92%</div><div class="dlbl">De ejecutivos C-suite reportan hasta 20% capacidad excedente — WEF 2025</div></div><div class="ptr"><strong>Riesgo sin alarma:</strong> El desplazamiento llega como la suma de decisiones dadas a otro, proyectos no asignados, reuniones a las que ya no llaman.</div><div class="psrc">World Economic Forum, encuesta global 1,010 C-suite, 2025</div></div></div>
+  <div class="bc b4 fu" data-l="op" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="5.5" stroke="#e67e22" stroke-width="1.8"/><path d="M15 2v3M15 25v3M2 15h3M25 15h3" stroke="#e67e22" stroke-width="1.8" stroke-linecap="round" opacity=".55"/><path d="M5.6 5.6l2.1 2.1M22.3 22.3l2.1 2.1M5.6 24.4l2.1-2.1M22.3 7.7l2.1-2.1" stroke="#e67e22" stroke-width="1.6" stroke-linecap="round" opacity=".3"/></svg></div><span class="ply pop">Capa operativa</span><div class="pnum">04</div><h3 class="ptit">Sobrecarga cognitiva sin arquitectura — "AI brain fry"</h3><p class="pten">El profesional de nivel 2-3 no amplifica su ventaja; amplifica su fricción. Más herramientas sin modelo = más desorientación, más errores, más agotamiento.</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dr"><div class="dblk"><div class="dnum">14%</div><div class="dlbl">De trabajadores experimenta fatiga mental por IA — BCG/HBR 2026</div></div><div class="dblk"><div class="dnum">r=−0.36</div><div class="dlbl">Correlación: más uso de IA sin modelo → menos confianza en decisiones — SAGE 2025</div></div></div><div class="ptr"><strong>La paradoja:</strong> Usada sin estructura, la IA no libera tiempo. Lo fragmenta. No reduce decisiones. Las multiplica. La herramienta sin modelo convierte la productividad en caos administrado.</div><div class="psrc">Boston Consulting Group / Harvard Business Review, marzo 2026 · SAGE Journals peer-reviewed 2025</div></div></div>
+  <div class="bc b5 fu d1" data-l="op" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><rect x="3" y="6" width="24" height="18" rx="3" stroke="#e67e22" stroke-width="1.8"/><path d="M3 12h24" stroke="#e67e22" stroke-width="1.5" opacity=".45"/><path d="M9 18h5M9 22h9" stroke="#e67e22" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg></div><span class="ply pop">Capa operativa</span><div class="pnum">05</div><h3 class="ptit">Brecha entre formación disponible y necesidad real</h3><p class="pten">La oferta no corresponde al nivel de necesidad. El profesional sabe que debe aprender, pero no sabe qué ni cómo. Inmovilidad disfrazada de ocupación.</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dr"><div class="dblk"><div class="dnum">$5.5T</div><div class="dlbl">Costo global estimado de la brecha para 2026 — IDC</div></div><div class="dblk"><div class="dnum">33%</div><div class="dlbl">De empleados recibió formación en IA el último año — IDC 2025</div></div></div><div class="ptr"><strong>El vacío estructural:</strong> La mayoría de la formación disponible apunta a habilidades avanzadas, no a la alfabetización general que la mayoría de profesionales realmente necesita.</div><div class="psrc">IDC Analyst Brief 2025 · OCDE, Bridging the AI Skills Gap, abril 2025</div></div></div>
+  <div class="bc b6 fu d2" data-l="str" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><path d="M15 27c-6.6 0-12-5.4-12-12S8.4 3 15 3s12 5.4 12 12" stroke="#3498db" stroke-width="1.8" stroke-linecap="round"/><path d="M23 23l-4-4" stroke="#3498db" stroke-width="2" stroke-linecap="round"/><circle cx="26" cy="26" r="3" stroke="#e74c3c" stroke-width="1.6"/><path d="M24.8 24.8l2.4 2.4" stroke="#e74c3c" stroke-width="1.6" stroke-linecap="round"/></svg></div><span class="ply pst">Capa estructural</span><div class="pnum">06</div><h3 class="ptit">Pérdida progresiva de criterio analítico propio</h3><p class="pten">El profesional no percibe que está perdiendo criterio. Lo nota cuando lo necesita y ya no está. La IA sin modelo no amplifica el pensamiento: lo reemplaza.</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dblk"><div class="dnum">r=−0.36</div><div class="dlbl">Uso prolongado de IA → menor confianza en decisiones propias — SAGE Journals 2025</div></div><div class="ptr"><strong>Riesgo de largo plazo:</strong> Cognitive offloading sin estructura produce dependencia sin dominio. El profesional delega el pensamiento sin conservar el criterio que le da valor.</div><div class="psrc">IE University · Gerlich (2025), revista Societies, MDPI · SAGE Journals 2025</div></div></div>
+  <div class="bc b7 fu" data-l="id" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="10" r="5" stroke="#e74c3c" stroke-width="1.8"/><path d="M5 27c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#e74c3c" stroke-width="1.8" stroke-linecap="round"/><path d="M21 3l2 2-2 2M9 3L7 5l2 2" stroke="#e74c3c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/></svg></div><span class="ply pid">Capa identitaria</span><div class="pnum">07</div><h3 class="ptit">Resistencia codificada en identidad profesional</h3><p class="pten">No es resistencia tecnológica. Es identitaria. El profesional teme perder el capital simbólico que lo define. No le teme a la herramienta; le teme al espejo.</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dblk"><div class="dnum">3 ejes</div><div class="dlbl">Resistencia IA: miedos, ineficacias y antipatías como dimensiones distintas — ScienceDirect 2024</div></div><div class="ptr"><strong>El dilema del experto:</strong> Cuanto más profunda la especialización, más amenazante se percibe la IA. El problema no es la tecnología. Es la estructura de identidad construida sobre el expertise.</div><div class="psrc">ScienceDirect, revisión integrativa de literatura académica, 2024</div></div></div>
+  <div class="bc b8 fu d1" data-l="id" onclick="tog(this)"><div class="pico"><svg viewBox="0 0 30 30" fill="none"><path d="M3 15h4l4-8 4 16 4-10 4 6 4-4" stroke="#e74c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="ply pid">Capa identitaria</span><div class="pnum">08</div><h3 class="ptit">Falsa sensación de seguridad en niveles bajos de consciencia</h3><p class="pten">El profesional en nivel 1-2 no siente urgencia porque los efectos del rezago no son inmediatos. Cuando la brecha se vuelve visible, ya costó años de posicionamiento.</p><button class="exb"><span>Ver evidencia</span><span class="exic">+</span></button><div class="pbody"><div class="dr"><div class="dblk"><div class="dnum">6%</div><div class="dlbl">De empleados se siente "muy cómodo" usando IA en sus roles — Universum/Gallup 2025</div></div><div class="dblk"><div class="dnum">54%</div><div class="dlbl">De líderes cree que su empresa no sobrevivirá sin IA a escala — Mercer</div></div></div><div class="ptr"><strong>La deuda compuesta:</strong> El tiempo no es neutral. Cada mes en zona de confort es deuda de adaptabilidad que se paga con intereses cuando el mercado exige el cambio.</div><div class="psrc">Universum Talent Outlook 2025 · Gallup · Mercer vía Aristek Systems 2025</div></div></div></div>
+</section>
+
+<section class="split"><div class="sph"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Profesional tomando decisiones estratégicas"><div class="spov"></div></div><div class="scnt"><div class="stag fu">Perspectiva del laboratorio</div><h2 class="sh fu d1">La IA amplifica<br>lo que ya existe</h2><div class="dv fu d2"></div><p style="font-size:15px;color:var(--mu);line-height:1.9;margin-bottom:18px" class="fu d3">Si tu estructura de decisión es sólida, la IA la hace más rápida y más precisa. Si es débil, la IA acelera los errores. No hay término medio.</p><p style="font-size:14px;color:var(--mu);line-height:1.85;margin-bottom:28px" class="fu d4">El profesional que adopta IA sin modelo no compite mejor. Compite más rápido en la dirección equivocada. La velocidad sin rumbo no es ventaja; es desgaste acelerado.</p></div></section>
+
+<section class="qsec"><div class="qbg"></div><div class="qinner fu"><span class="qmk">"</span><p class="qtxt">El que tiene modelo sabe qué amplificar. El que no lo tiene amplifica ruido, o no amplifica nada, y llama a eso <em>productividad</em>.</p><div class="qatt">X Market Lab · Laboratorio de Arquitectura de Decisión</div></div></section>
+
+<section class="lyrsec"><div class="stag fu">03 — Arquitectura del problema</div><h2 class="sh fu d1">El dolor opera en tres capas distintas</h2><div class="dv fu d2"></div><p class="sp fu d3">Cada capa requiere una respuesta diferente. La mayoría de las soluciones del mercado atienden la superficie. X Market Lab trabaja las tres.</p><div class="lyrgrid"><div class="lcard lstr fu"><div class="lnm">01</div><div class="lttl" style="color:#3498db">Capa estructural</div><div class="ldsc">Los dolores que no se sienten a corto plazo pero erosionan posición de mercado.</div></div><div class="lcard lop fu d1"><div class="lnm">02</div><div class="lttl" style="color:#e67e22">Capa operativa</div><div class="ldsc">Los dolores que sí se sienten pero se maldiagnostican.</div></div><div class="lcard lid fu d2"><div class="lnm">03</div><div class="lttl" style="color:#e74c3c">Capa identitaria</div><div class="ldsc">Los más difíciles de articular.</div></div></div></section>
+
+<section class="clsec"><div class="stag fu" style="text-align:center">04 — Identificación</div><h2 class="sh fu d1" style="text-align:center;margin:0 auto 12px">¿Con cuál realidad conectas?</h2><p class="sp fu d2" style="text-align:center;margin:0 auto 48px;max-width:500px">Los puntos de dolor se experimentan de forma distinta según desde dónde operas.</p></section>
+
+<section class="cta"><div class="ctabg"></div><div class="ctaov"></div><div class="ctain fu"><div class="ctaey"><div class="bdot"></div>X Market Lab · El siguiente paso</div><h2 class="ctah">Aprende IA con criterio,<br>no con <em>ruido</em></h2><p class="ctas">No somos una escuela de prompts ni una agencia de automatización. Somos un laboratorio estratégico que te ayuda a construir la arquitectura de decisión.</p></div></section>
+
+<section class="srcsec"><div class="srct">Referencias y fuentes documentadas</div><div class="srcg"><div class="srci"><div class="srco">PwC</div><div class="srcd">Global AI Jobs Barometer 2025</div></div><div class="srci"><div class="srco">OCDE</div><div class="srcd">Bridging the AI Skills Gap · 2025</div></div><div class="srci"><div class="srco">WEF</div><div class="srcd">Future of Jobs 2025</div></div><div class="srci"><div class="srco">IDC</div><div class="srcd">Closing the Gap 2025</div></div></div></section>
+
+<footer><div class="fbrnd">XMARKET <span>LAB</span></div><div class="fnote">Laboratorio de Arquitectura de Decisión · Economía Algorítmica · © 2025</div></footer>
+
+<script>
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('prog').style.width=(s/h*100)+'%';});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.07});document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+function tog(el){el.classList.toggle('open')}
+function selLv(el){document.querySelectorAll('.lvi').forEach(i=>i.classList.remove('sel'));el.classList.add('sel')}
+document.querySelectorAll('.fb').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');const f=btn.dataset.f;document.querySelectorAll('.bc').forEach((c)=>{const show=f==='all'||c.dataset.l===f;if(show){c.style.display='';setTimeout(()=>{c.style.opacity='1';c.style.transform=''},10)}else{c.style.opacity='0';c.style.transform='scale(.96)';setTimeout(()=>{c.style.display='none'},260)}});});});
+</script>
 </body>
 </html>
