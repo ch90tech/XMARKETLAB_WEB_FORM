@@ -17,18 +17,8 @@
   tailwind.config = {darkMode:'class',theme:{extend:{colors:{tertiary:'#8ADC16',surface:'#131313',onSurface:'#E5E2E1',muted:'#A7ADB7'},fontFamily:{headline:['Public Sans'],body:['Inter'],display:['Libre Franklin'],accent:['Montserrat']}}}}
 </script>
 <style>
-  :root{
-    --hero-top: clamp(130px, 16vh, 170px);
-    --hero-bottom: clamp(52px, 10vh, 96px);
-    --hero-gap: clamp(26px, 5vh, 56px);
-    --title-size: clamp(2.7rem, 9.4vw, 8rem);
-    --title-line: .92;
-    --animation-size: min(54vw, 360px);
-  }
   .material-symbols-outlined {font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}
-  .hero-stage{
-    position:relative;
-    overflow:hidden;
+  .artifacts-stage{
     min-height:calc(100vh - 76px);
     background:
       radial-gradient(circle at 50% 2%, rgba(138,220,22,0.16), transparent 22%),
