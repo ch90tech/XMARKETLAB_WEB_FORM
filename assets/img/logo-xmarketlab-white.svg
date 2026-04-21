@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Logo X Market Lab</title>
+  <desc id="desc">Monograma XML en blanco sobre fondo transparente.</desc>
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="128" cy="128" r="104" stroke-width="10" opacity="0.95"/>
+    <path d="M72 78 L116 178 M116 78 L72 178" stroke-width="15"/>
+    <path d="M130 178 L130 78 L160 130 L190 78 L190 178" stroke-width="15"/>
+  </g>
+</svg>
