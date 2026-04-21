@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>X MARKET LAB | Laboratorio AI</title>
+<title>X MARKET LAB | Artefactos</title>
 <link rel="icon" type="image/png" href="/assets/img/Logo%20transparente%20XML.png"/>
 <link rel="apple-touch-icon" href="/assets/img/Logo%20transparente%20XML.png"/>
 <meta property="og:image" content="https://www.xmarketlab.com/assets/img/Logo%20transparente%20XML.png"/>
 <meta property="og:image:type" content="image/png"/>
 <meta property="og:image:alt" content="Logo de X Market Lab"/>
-<meta name="description" content="Laboratorio AI de X Market Lab. Próximamente."/>
+<meta name="description" content="Artefactos de X Market Lab. Diagnósticos, modelos y piezas de análisis sobre IA."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;900&family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Public+Sans:wght@700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -87,7 +87,7 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:center;
+    justify-content:flex-start;
     gap:var(--hero-gap);
   }
   .hero-animation{
@@ -134,6 +134,29 @@
     letter-spacing:.01em;
     margin:0;
   }
+
+  .artifact-index{
+    width:min(980px,100%);
+    margin-top:clamp(.5rem,1.8vw,1.4rem);
+  }
+  .artifact-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;}
+  .artifact-card{
+    display:flex;flex-direction:column;overflow:hidden;
+    border:1px solid rgba(255,255,255,.14);
+    background:linear-gradient(160deg, rgba(8,17,29,.94) 0%, rgba(6,12,21,.96) 100%);
+    text-decoration:none;color:inherit;
+    transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+  }
+  .artifact-card:hover,.artifact-card:focus-visible{transform:translateY(-4px);border-color:rgba(138,220,22,.68);box-shadow:0 16px 40px rgba(0,0,0,.38),0 0 0 1px rgba(138,220,22,.13);}
+  .artifact-card:focus-visible{outline:2px solid rgba(138,220,22,.7);outline-offset:3px;}
+  .artifact-thumb{height:190px;background:#09111d;border-bottom:1px solid rgba(255,255,255,.09);}
+  .artifact-thumb svg{display:block;width:100%;height:100%;}
+  .artifact-body{padding:1.2rem;display:flex;flex-direction:column;gap:.74rem;text-align:left;}
+  .artifact-label{font:600 .68rem/1 Montserrat,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:rgba(138,220,22,.95);}
+  .artifact-title{margin:0;font:900 clamp(1.28rem,2.3vw,1.72rem)/1.1 'Libre Franklin',sans-serif;color:#f5f8ff;}
+  .artifact-short,.artifact-long{margin:0;color:rgba(229,226,225,.86);font:500 .96rem/1.62 Inter,sans-serif;}
+  .artifact-long{color:rgba(229,226,225,.7);}
+  .artifact-cta{font:700 .83rem/1.2 Montserrat,sans-serif;color:#8ADC16;letter-spacing:.03em;margin-top:.1rem;}
 
   .network-line{
     stroke:url(#networkLine);
@@ -184,6 +207,9 @@
     .orbit-ring.r2{width:min(70vw,270px); height:min(70vw,270px);}
     .orbit-ring.r3{width:min(46vw,165px); height:min(46vw,165px);}
     .hero-note{font-size:.93rem; max-width:34rem;}
+    .artifact-index{margin-top:0; width:min(100%, 34rem);}
+    .artifact-thumb{height:160px;}
+    .artifact-body{padding:1rem;}
     @keyframes floatNodeOne{0%{transform:translate(-50%,-160px)}25%{transform:translate(110px,-50%)}50%{transform:translate(-50%,95px)}75%{transform:translate(-145px,-50%)}100%{transform:translate(-50%,-160px)}}
     @keyframes floatNodeTwo{0%{transform:translate(128px,-50%)}25%{transform:translate(-50%,108px)}50%{transform:translate(-132px,-50%)}75%{transform:translate(-50%,-145px)}100%{transform:translate(128px,-50%)}}
     @keyframes floatNodeThree{0%{transform:translate(82px,72px)}25%{transform:translate(-86px,68px)}50%{transform:translate(-92px,-73px)}75%{transform:translate(84px,-70px)}100%{transform:translate(82px,72px)}}
@@ -350,9 +376,50 @@
       </div>
 
       <div class="hero-copy">
-        <h1 class="coming-title">PRÓXIMAMENTE</h1>
-        <p class="hero-note">Estamos construyendo una experiencia de laboratorio más clara, precisa y robusta para explorar IA con criterio, arquitectura y profundidad.</p>
+        <h1 class="coming-title">ARTEFACTOS</h1>
+        <p class="hero-note">Diagnósticos, modelos y piezas de análisis para entender cómo la IA transforma el trabajo, los negocios y la toma de decisiones.</p>
       </div>
+
+      <section class="artifact-index" aria-label="Índice de artefactos">
+        <div class="artifact-grid">
+          <a class="artifact-card" href="./el-costo-de-no-integrar-ia/" aria-label="Explorar artefacto: El costo real de no integrar IA">
+            <div class="artifact-thumb" aria-hidden="true">
+              <svg viewBox="0 0 640 300" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="artifactBg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0d1728"/>
+                    <stop offset="100%" stop-color="#070c17"/>
+                  </linearGradient>
+                  <linearGradient id="artifactLine" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#8ADC16" stop-opacity="0.08"/>
+                    <stop offset="60%" stop-color="#8ADC16" stop-opacity="0.72"/>
+                    <stop offset="100%" stop-color="#8ADC16" stop-opacity="0.08"/>
+                  </linearGradient>
+                </defs>
+                <rect width="640" height="300" fill="url(#artifactBg)"/>
+                <g stroke="rgba(255,255,255,.08)" stroke-width="1">
+                  <path d="M0 66h640M0 132h640M0 198h640M0 264h640"/>
+                  <path d="M80 0v300M160 0v300M240 0v300M320 0v300M400 0v300M480 0v300M560 0v300"/>
+                </g>
+                <g fill="none" stroke="url(#artifactLine)" stroke-width="2">
+                  <path d="M42 214 L146 158 L236 180 L338 116 L430 146 L548 98 L604 112"/>
+                  <path d="M42 242 L112 205 L230 220 L316 188 L430 202 L548 172 L604 184" opacity=".58"/>
+                </g>
+                <g fill="#8ADC16">
+                  <circle cx="146" cy="158" r="4"/><circle cx="338" cy="116" r="4"/><circle cx="548" cy="98" r="4"/>
+                </g>
+              </svg>
+            </div>
+            <div class="artifact-body">
+              <span class="artifact-label">Artefacto 1</span>
+              <h2 class="artifact-title">El costo real de no integrar IA</h2>
+              <p class="artifact-short">No es un problema de herramientas. Es un problema de estructura.</p>
+              <p class="artifact-long">Un diagnóstico sobre brecha profesional, obsolescencia, sobrecarga cognitiva y pérdida de criterio en la economía algorítmica.</p>
+              <span class="artifact-cta">Explorar artefacto →</span>
+            </div>
+          </a>
+        </div>
+      </section>
     </div>
   </section>
 </main>
