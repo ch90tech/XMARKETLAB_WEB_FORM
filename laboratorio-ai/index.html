@@ -139,6 +139,127 @@
     margin:0;
   }
 
+
+  .flagship-projects {
+    width: 100%;
+    padding: 88px 20px 72px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(124, 255, 0, 0.06), transparent 34%),
+      linear-gradient(180deg, #111111 0%, #0f1114 100%);
+    color: #ffffff;
+  }
+  .flagship-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .flagship-eyebrow {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #7CFF00;
+    font-weight: 800;
+    margin: 0 0 18px;
+  }
+  .flagship-projects h2 {
+    font-family: "Libre Franklin", Arial, sans-serif;
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.02;
+    max-width: 850px;
+    margin: 0 auto 24px;
+    font-weight: 850;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+  }
+  .flagship-intro {
+    font-family: "Helvetica World", Arial, sans-serif;
+    max-width: 780px;
+    margin: 0 auto 44px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.76);
+  }
+  .flagship-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 auto 38px;
+  }
+  .flagship-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(7, 20, 33, 0.96), rgba(5, 13, 22, 0.98));
+    border: 1px solid rgba(124, 255, 0, 0.18);
+    padding: 24px 18px 22px;
+    text-align: left;
+    min-height: 196px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+  }
+  .flagship-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.28;
+    pointer-events: none;
+  }
+  .flagship-card > * {
+    position: relative;
+    z-index: 1;
+  }
+  .flagship-number {
+    display: block;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 12px;
+    color: #7CFF00;
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+  .flagship-card h3 {
+    font-family: "Libre Franklin", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.15;
+    margin: 0 0 12px;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+  .flagship-card p {
+    font-family: "Helvetica World", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.68);
+    margin: 0;
+  }
+  .flagship-closing {
+    font-family: "Libre Franklin", Arial, sans-serif;
+    max-width: 740px;
+    margin: 0 auto 26px;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+  .flagship-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #7CFF00;
+    text-decoration: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+  .flagship-link:hover {
+    opacity: 0.82;
+    transform: translateX(2px);
+  }
+
   .artifact-index{
     width:min(980px,100%);
     margin-top:clamp(.5rem,1.8vw,1.4rem);
@@ -192,6 +313,33 @@
   @keyframes floatNodeOne{0%{transform:translate(-50%,-230px)}25%{transform:translate(150px,-50%)}50%{transform:translate(-50%,130px)}75%{transform:translate(-210px,-50%)}100%{transform:translate(-50%,-230px)}}
   @keyframes floatNodeTwo{0%{transform:translate(180px,-50%)}25%{transform:translate(-50%,150px)}50%{transform:translate(-190px,-50%)}75%{transform:translate(-50%,-210px)}100%{transform:translate(180px,-50%)}}
   @keyframes floatNodeThree{0%{transform:translate(115px,105px)}25%{transform:translate(-120px,95px)}50%{transform:translate(-135px,-105px)}75%{transform:translate(118px,-102px)}100%{transform:translate(115px,105px)}}
+
+  @media (max-width: 980px){
+    .flagship-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .flagship-projects {
+      padding: 76px 20px 62px;
+    }
+  }
+  @media (max-width: 580px) {
+    .flagship-projects {
+      padding: 68px 18px 54px;
+    }
+    .flagship-grid {
+      grid-template-columns: 1fr;
+    }
+    .flagship-card {
+      min-height: auto;
+    }
+    .flagship-intro {
+      font-size: 15px;
+      line-height: 1.58;
+    }
+    .flagship-closing {
+      font-size: 19px;
+    }
+  }
 
   @media (max-width: 1024px){
     :root{ --hero-top: 118px; --hero-bottom: 56px; --hero-gap: 28px; --title-size: clamp(2.8rem, 12vw, 6.5rem); }
@@ -395,6 +543,39 @@
         <h1 class="coming-title">ARTEFACTOS</h1>
         <p class="hero-note">Diagnósticos, modelos y piezas de análisis para entender cómo la IA transforma el trabajo, los negocios y la toma de decisiones.</p>
       </div>
+
+
+      <section class="flagship-projects" aria-labelledby="flagship-projects-title">
+        <div class="flagship-inner">
+          <p class="flagship-eyebrow">proyectos insignia 2026–2027</p>
+          <h2 id="flagship-projects-title">Arquitectura para competir en la economía algorítmica</h2>
+          <p class="flagship-intro">Las empresas ya no compiten solo con productos, precios o presencia digital. Compiten con su capacidad para proteger sus activos digitales, organizar su conocimiento, interpretar el mercado y rediseñar su modelo de negocio con inteligencia artificial.</p>
+          <div class="flagship-grid">
+            <article class="flagship-card">
+              <span class="flagship-number">01</span>
+              <h3>Infraestructura Cognitiva</h3>
+              <p>Sistemas para convertir conocimiento disperso en mejores decisiones.</p>
+            </article>
+            <article class="flagship-card">
+              <span class="flagship-number">02</span>
+              <h3>Defensa Digital Estratégica</h3>
+              <p>Protección de cuentas, datos, accesos y continuidad operativa.</p>
+            </article>
+            <article class="flagship-card">
+              <span class="flagship-number">03</span>
+              <h3>Market Watch Intelligence</h3>
+              <p>Lectura de señales comerciales, clientes, competencia y oportunidades.</p>
+            </article>
+            <article class="flagship-card">
+              <span class="flagship-number">04</span>
+              <h3>Modelos de Negocio con IA</h3>
+              <p>Rediseño de la forma en que una empresa crea, entrega y captura valor.</p>
+            </article>
+          </div>
+          <p class="flagship-closing">La ventaja no está en usar más herramientas. Está en construir mejores sistemas para pensar, decidir y competir.</p>
+          <a href="/manifiesto-proyectos-insignia/" class="flagship-link">Explorar manifiesto →</a>
+        </div>
+      </section>
 
       <section class="artifact-index" aria-label="Índice de artefactos">
         <div class="artifact-grid">
